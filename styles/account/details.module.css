@@ -1,0 +1,32 @@
+.main {
+  width: auto;
+  position: relative;
+  padding: 10px;
+}
+.table {
+  width: 100%;
+  position: relative;
+}
+.items {
+  width: 100%;
+  margin: 15px 10px;
+  background: #fff;
+}
+.items span {
+  font-size: 20px;
+  font-weight: 600;
+}
+.items span:first-child {
+  color: tomato;
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+@media (max-width: 750px) {
+  .main {
+    padding: 0px;
+  }
+  .items span {
+    font-size: 17px;
+    font-weight: 400;
+  }
+}

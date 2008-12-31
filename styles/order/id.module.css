@@ -1,0 +1,105 @@
+.main {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding-top: 120px;
+  margin-bottom: 70px;
+  position: relative;
+}
+.titel {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid rgb(10, 22, 11);
+}
+.titel h1 {
+  font-size: 25px;
+  color: var(--dark);
+}
+.titel h1 span {
+  color: tomato;
+  font-size: 30px;
+  position: relative;
+  top: 3px;
+  padding-right: 5px;
+}
+.statusbar {
+  width: 100%;
+  position: relative;
+}
+.statusbar ul li p::selection {
+  background: transparent;
+}
+.statusbar ul {
+  width: 100%;
+  height: 200px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.statusbar ul li {
+  width: 150px;
+  text-align: center;
+  color: #949494;
+}
+.statusbar ul li.ac {
+  color: #00dd81;
+}
+
+.statusbar ul li span {
+  font-size: 25px;
+  padding: 5px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.statusbar ul li span::after {
+  content: "";
+  height: 5px;
+  width: 150px;
+  background: #949494;
+  position: absolute;
+  top: 35%;
+  left: -75px;
+  z-index: -1;
+}
+.statusbar ul li:first-child span::after {
+  width: 75px;
+  left: 0px;
+}
+.statusbar ul li:last-child span::after {
+  width: 75px;
+  right: 0px;
+}
+
+.statusbar ul li.ac span::after {
+  background: #3bf8cc;
+}
+.statusbar ul li p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: none;
+}
+/* media 750px max-w */
+
+@media (max-width: 750px) {
+  .main {
+    padding-top: 70px;
+  }
+  .titel h1 {
+    font-size: 20px;
+  }
+  .titel h1 span {
+    font-size: 25px;
+  }
+  .statusbar {
+    overflow: hidden;
+  }
+  .statusbar ul {
+    width: 500px;
+    transform: scale(70%) translateX(-60px);
+  }
+}

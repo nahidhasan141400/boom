@@ -1,0 +1,28 @@
+.account {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  /* 
+  background: red; */
+}
+.con {
+  width: 100%;
+  position: relative;
+}
+.body {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (max-width: 750px) {
+  .account {
+    padding-top: 100px;
+  }
+}

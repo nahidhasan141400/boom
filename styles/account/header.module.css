@@ -1,0 +1,124 @@
+.main {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.con {
+  width: 95%;
+  height: 100%;
+  /* background: #00ffa23e; */
+  background: linear-gradient(60deg, var(--green), 20%, transparent);
+  margin: auto;
+  backdrop-filter: saturate(350%);
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 7px 6px 13px rgba(0, 0, 0, 0.182);
+}
+.bgImg {
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  right: -50px;
+  bottom: -90px;
+}
+.profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.avatar {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 10px 0 20px;
+  overflow: hidden;
+}
+.photo {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.change {
+  height: 100%;
+  width: 100%;
+  padding-top: 10px;
+  bottom: -100%;
+  position: absolute;
+  text-align: center;
+  background-color: #00ffa25a;
+  cursor: pointer;
+  color: rgb(9, 0, 29);
+}
+.change svg {
+  transition: all 0.2s;
+}
+.avatar:hover > .change {
+  bottom: -50%;
+}
+.change:hover {
+  color: tomato;
+}
+.change span {
+  font-size: 25px;
+}
+.change h2 {
+  font-size: 18px;
+}
+.name h1 {
+  font-size: 30px;
+  text-transform: capitalize;
+  padding-bottom: 5px;
+}
+.name p {
+  font-size: 17px;
+  color: #2f2f2f;
+}
+@media (max-width: 750px) {
+  .main {
+    height: 150px;
+  }
+  .con {
+    padding: 6px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.182);
+  }
+  .bgImg {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: -50px;
+    bottom: -40px;
+  }
+  .avatar {
+    height: 110px;
+    width: 110px;
+    margin: 0 10px 0 10px;
+  }
+  .change {
+    padding-top: 5px;
+  }
+  .change span {
+    font-size: 17px;
+  }
+  .change h2 {
+    font-size: 12px;
+  }
+  .name h1 {
+    font-size: 20px;
+  }
+  .name p {
+    font-size: 12px;
+  }
+}

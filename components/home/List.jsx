@@ -8,7 +8,7 @@ import samusa from "../../public/img/samusa.png";
 
 const List = () => {
   return (
-    <div className={style.main}>
+    <div id="menu" className={style.main}>
       <div className={style.titel}>
         <h1>our best menu</h1>
       </div>

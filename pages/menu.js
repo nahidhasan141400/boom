@@ -4,10 +4,12 @@ import List from '../components/home/List';
 const menu = () => {
   return (
     <>
-        <div>
+        
             <div style={{
         paddingTop:"110px",
-    }} ></div>
+        minHeight:"100vh",
+        paddingBottom:"50px",
+    }} >
             <List/>
         </div>
     </>

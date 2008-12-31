@@ -1,7 +1,7 @@
 import React from 'react';
 import Empty from "../components/cart/Empty";
 import Cart from "../components/cart/Cart";
-let isempty = true;
+let isempty = false;
 const cart = () => {
   return (
     <div>

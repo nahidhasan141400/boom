@@ -86,7 +86,7 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><a href="#"><FaRegIdCard />account</a></motion.li>
+                    ><Link href="/account"><a ><FaRegIdCard />account</a></Link></motion.li>
                     <motion.li 
                         initial={{
                 transform: "scale(10%)"
@@ -95,7 +95,7 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><a href="#"><FaRing/>logout</a></motion.li>
+                    ><Link href="/login"><a ><FaRing/>logout</a></Link></motion.li>
                 </ol>
             </div>
         </div>

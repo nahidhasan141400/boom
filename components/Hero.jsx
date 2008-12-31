@@ -4,6 +4,7 @@ import Image from 'next/image';
 import img1 from "../public/img/pizza-baner-1.png";
 import img2 from "../public/img/kabab.png"
 import img3 from "../public/img/barger.png"
+import Link from "next/link";
 
 const Hero = () => {
     
@@ -38,7 +39,7 @@ const Hero = () => {
   return (
     <div className={style.main}>
         <div className={style.btncon}>
-            <button>order now</button>
+            <Link href="/menu"><button>order now</button></Link>
         </div>
         <div ref={slider} className={style.slider}>
             <div  className={style.imgcon}>

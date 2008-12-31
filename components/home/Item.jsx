@@ -21,7 +21,9 @@ const Item = ({name, photo, price, rating}) => {
             duration : 0.5,
             type:"spring"
           }}
-    className={style.mainItem}>
+    className={style.mainItem}
+    
+    >
         <div className={style.img}>
             <Image src={photo} alt={name} layout="fill" objectFit='contain'/>
         </div>

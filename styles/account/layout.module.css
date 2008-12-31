@@ -1,0 +1,13 @@
+.main {
+  width: 95%;
+  margin: auto;
+  display: flex;
+}
+.nav {
+  margin-right: 10px;
+}
+@media (max-width: 750px) {
+  .main {
+    flex-direction: column;
+  }
+}
