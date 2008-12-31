@@ -67,6 +67,9 @@
 .avatar:hover > .change {
   bottom: -50%;
 }
+.avatar:active > .change {
+  bottom: -50%;
+}
 .change:hover {
   color: tomato;
 }

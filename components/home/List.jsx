@@ -13,7 +13,7 @@ const List = () => {
         <h1>our best menu</h1>
       </div>
       <div className={style.menucon}>
-            <Item name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
+            <Item id={"123456"} name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
             <Item name={"milk lassi"} photo={lassi} price={"10"} rating={"4.3"} />
             <Item name={"samusa"} photo={samusa} price={"0.10"} rating={"4.8"} />
             <Item name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
