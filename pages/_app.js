@@ -3,9 +3,11 @@ import Common from "../components/Common";
 
 function MyApp({ Component, pageProps }) {
   return (
+    
     <Common>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
     </Common>
+    
   )
 }
 

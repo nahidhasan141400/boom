@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const ncrip = require("ncrip")
-// const dbConnect = require("../../lib/DbConnection");
 import dbConnect from "../../lib/DbConnection";
 
 import user from "../../models/user";
@@ -19,17 +18,37 @@ export default async function handler(req, res) {
       if(dataPh){
         return res.status(200).send({for:"phone",err:"phone number is use"})
       }
+
+      let userTOadd = {...req.body};
+      userTOadd.password = ncrip.enc(req.body.password,process.env.N_KEY)
      
       try{
-      	new user({...req.body}).save();
+      	new user(userTOadd).save();
       	 res.status(201).send("user createrd");
       }catch(err){
-      	res.statue(400).send(err)
+        console.log(err)
+      	res.status(400).send(err)
       }
   }
 
   if (method === "GET"){
-    res.send("ok")
+    const key = req.headers.cookies
+    const hash = req.headers.boom
+    const _id = ncrip.dnc(hash,key);
+    try {
+      let userOne = await user.findOne({_id});
+      let sendObj = {
+        name:userOne.name,
+        phone:userOne.phone,
+        email:userOne.email,
+        address:userOne.address,
+        image:userOne.image,
+      }
+      
+      res.send(sendObj)
+    } catch (error) {
+      res.status(400).send(error)
+    }
   }
 
 }

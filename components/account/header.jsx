@@ -5,7 +5,7 @@ import samusa from "../../public/img/samusa-bg.png";
 import {FaCamera} from "react-icons/fa";
 import profile from "../../public/nahid.jpg"
 
-const header = () => {
+const header = ({user}) => {
   return (
     <div className={style.main}>
         <div className={style.con}>
@@ -15,7 +15,7 @@ const header = () => {
             <div className={style.profile}>
                 <div className={style.avatar}>
                     <div className={style.photo}>
-                    <Image alt='' layout='fill' src={profile} objectFit="contain"/>
+                    <Image alt='' layout='fill' src={user.image} objectFit="contain"/>
                     </div>
                     <div className={style.change}>
                         <span><FaCamera/></span>
@@ -23,8 +23,8 @@ const header = () => {
                     </div>
                 </div>
                 <div className={style.name}>
-                    <h1>nahid hasan sagar</h1>
-                    <p>nahidhasan@gmail.com</p>
+                    <h1>{user.name}</h1>
+                    <p>{user.email === ""? user.phone:user.email}</p>
                 </div>
             </div>
         </div>

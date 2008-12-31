@@ -1,13 +1,17 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import style from "../styles/nav.module.css";
 import Image from 'next/image';
 import logo from "../public/img/logo.png";
 import {motion} from "framer-motion";
-import {FaCartPlus , FaHome , FaPaperclip , FaRegIdCard , FaRing , FaHamburger , FaUser } from "react-icons/fa"
+import {FaCartPlus , FaHome , FaPaperclip , FaRegIdCard , FaRing , FaHamburger , FaUser, FaDoorOpen, FaPenSquare } from "react-icons/fa"
 import Link from "next/link";
+import {useAuth} from "../context/autContext";
+import Router from "next/router";
 
 const Nav = () => {
-    const transiriion = {
+  const {login,setLogin} = useAuth();
+  
+  const transiriion = {
                         duration : 0.3,
                         type:"spring"
                       }
@@ -24,6 +28,15 @@ const Nav = () => {
         }else{
             menu.r=== -100?setmenu({l:-100,r:0}):setmenu({l:-100,r:-100})
         }
+    }
+    const logoutFN = ()=>{
+      var expiry = new Date();
+       expiry.setTime(expiry.getTime() - 3600);
+       ["offer","boom"].map((name)=>{
+        document.cookie = name + "=; expires=" + expiry.toGMTString() + "; path=/";
+       });
+         setLogin(false);
+         Router.push('/login')
     }
   return (
     <nav className={style.main}>
@@ -77,7 +90,7 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><Link href="/order"><a ><FaPaperclip />order</a></Link></motion.li>
+                    ><Link href={login?"/order":"/login"}><a ><FaPaperclip />order</a></Link></motion.li>
                     <motion.li 
                         initial={{
                 transform: "scale(10%)"
@@ -86,7 +99,11 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><Link href="/account"><a ><FaRegIdCard />account</a></Link></motion.li>
+                    >{login?
+                      <Link href="/account"><a ><FaRegIdCard />account</a></Link>
+                      :<Link href="/registration"><a ><FaPenSquare />Sing up</a></Link>
+                    }
+                      </motion.li>
                     <motion.li 
                         initial={{
                 transform: "scale(10%)"
@@ -95,7 +112,10 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><Link href="/login"><a ><FaRing/>logout</a></Link></motion.li>
+                    >{
+                      login?<a onClick={logoutFN}><FaDoorOpen/>logout</a>:
+                      <Link href="/login"><a ><FaRing/>Sing in</a></Link>
+                      }</motion.li>
                 </ol>
             </div>
         </div>
@@ -104,4 +124,6 @@ const Nav = () => {
   )
 }
 
-export default Nav
+
+export default Nav;
+
