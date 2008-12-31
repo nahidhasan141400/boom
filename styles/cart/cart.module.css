@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .listCon {
   flex: 2;
   width: 100%;
@@ -112,4 +113,25 @@
 .btnsec button:active {
   transform: scale(95%);
   color: var(--dark);
+}
+
+@media (max-width: 750px) {
+  .main {
+    height: auto;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .listCon {
+    flex: auto;
+    min-height: auto;
+    padding-bottom: 10px;
+  }
+  .billCon {
+    padding-bottom: 60px;
+  }
+  .list {
+    width: 95%;
+  }
 }

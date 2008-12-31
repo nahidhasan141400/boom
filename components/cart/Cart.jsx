@@ -15,7 +15,7 @@ const Cart = () => {
       <div className={style.container}>
         <div className={style.listCon}>
           <div className={style.list}>
-            {[1,2,3,4].map(e => <Item key={e}/>)}
+            {[1,2,3,4,5,6].map(e => <Item key={e}/>)}
           </div>
         </div>
         <div className={style.billCon}>

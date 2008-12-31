@@ -25,4 +25,106 @@
 
 .info {
   flex: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.info .titel p {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 0px;
+  width: 100%;
+  color: #212827;
+  text-transform: capitalize;
+}
+.price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.cuantity {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.reng button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 800;
+  color: tomato;
+  background: var(--green);
+  border: none;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+.reng button:hover {
+  transform: scale(105%);
+}
+.reng input {
+  width: 50px;
+  height: 30px;
+  font-size: 20px;
+  color: tomato;
+  outline: none;
+  border-radius: 10px;
+  margin: 0px 5px;
+  border: none;
+  text-align: center;
+}
+.delete {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -20px;
+  top: 10px;
+}
+.delete button {
+  font-size: 26px;
+  padding: 10px;
+  color: tomato;
+  background: var(--green);
+  border-radius: 50%;
+  border: none;
+  box-shadow: -3px 4px 5px rgba(0, 0, 0, 0.296);
+  transition: all 0.3s;
+}
+.delete svg {
+  position: relative;
+  top: 5px;
+  filter: drop-shadow(0 0 2px rgb(71, 197, 255));
+}
+
+.delete button:hover {
+  color: var(--green);
+  background-color: tomato;
+}
+
+@media (max-width: 750px) {
+  .info {
+    flex: 2;
+  }
+  .info .titel p {
+    font-size: 16px;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .delete {
+    top: -5px;
+    right: 2px;
+  }
+  .delete button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .delete svg {
+    position: relative;
+    top: 0px;
+    filter: drop-shadow(0 0 2px rgb(71, 197, 255));
+  }
 }

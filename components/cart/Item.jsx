@@ -14,22 +14,22 @@ const Item = () => {
       </div>
       {/* img end */}
       <div className={style.info}>
-        <div className="titel">
+        <div className={style.titel}>
           <p>burger</p>
         </div>
-        <div className="price">
+        <div className={style.price}>
           <p>120 $</p>
           <p><span>total price</span>120$ </p>
         </div>
-        <div className="cuantity">
-          <p>cuantyti</p>
-          <div className="reng">
+        <div className={style.cuantity}>
+          <p>Quantity</p>
+          <div className={style.reng}>
             <span><button>+</button></span><span><input type="number" name="" id="" /></span><span><button>-</button></span>
           </div>
         </div>
       </div>
       {/* info end  */}
-      <div className="delete">
+      <div className={style.delete}>
         <button><BsTrash/></button>
       </div>
     </div>
