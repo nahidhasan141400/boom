@@ -1,0 +1,101 @@
+.main {
+  width: 100%;
+  height: 150px;
+  background: #00ffa3;
+  position: relative;
+  margin: 20px 0px;
+}
+.borderup,
+.borderdown {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+}
+
+.borderup {
+  background: url("../public/img/up-b-green.png");
+  background-size: 100% 100%;
+  top: -25px;
+}
+.borderdown {
+  background: url("../public/img/down-b-green.png");
+  background-size: 100% 100%;
+  bottom: -25px;
+}
+.conteiner {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  overflow-x: auto;
+}
+.card {
+  min-width: 120px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/* .card:hover {
+  background-color: white;
+} */
+.card:hover > .logo {
+  background-color: tomato;
+}
+.card:hover > h1 {
+  color: tomato;
+}
+.card .logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: tomato;
+  height: 60px;
+  min-height: 60px;
+  max-height: 60px;
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  border-radius: 50%;
+}
+.card h1 {
+  font-size: 17px;
+  color: #0f0f11;
+  text-transform: capitalize;
+}
+
+@media (min-width: 800px) {
+  .main {
+    margin: 40px 0px;
+  }
+  .borderup,
+  .borderdown {
+    height: 50px;
+  }
+  .borderup {
+    top: -50px;
+  }
+  .borderdown {
+    bottom: -50px;
+  }
+  /* .card .logo {
+  } */
+  .card h1 {
+    font-size: 20px;
+  }
+}
+.m {
+  transform: scale();
+}

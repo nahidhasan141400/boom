@@ -1,0 +1,27 @@
+.main {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 100px;
+}
+.titel {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  margin: 20px 0px;
+  color: var(--green);
+  text-shadow: 1.5px 1.5px 0px #1f1f11;
+}
+
+.titel h1 {
+  text-transform: capitalize;
+  transform: skew(-25deg, -6deg);
+}
+.menucon {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
