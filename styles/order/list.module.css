@@ -1,0 +1,41 @@
+.main {
+  width: 100%;
+  position: relative;
+}
+.con {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.327), -2px -2px 2px lightgreen;
+  border-radius: 10px;
+}
+.id {
+  flex: 1;
+  position: relative;
+}
+.id h1 {
+  font-size: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.id h1:hover {
+  color: var(--green);
+}
+.status {
+  flex: 1;
+  text-align: center;
+}
+.status h1 {
+  font-size: 17px;
+}
+.time {
+  flex: 1;
+  text-align: right;
+}
+.time h1 {
+  font-size: 17px;
+}

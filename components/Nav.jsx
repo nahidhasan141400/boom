@@ -77,7 +77,7 @@ const Nav = () => {
                 {transform: "scale(100%)"}
               }
               transition={transiriion}
-                    ><a href="#"><FaPaperclip />order</a></motion.li>
+                    ><Link href="/order"><a ><FaPaperclip />order</a></Link></motion.li>
                     <motion.li 
                         initial={{
                 transform: "scale(10%)"
