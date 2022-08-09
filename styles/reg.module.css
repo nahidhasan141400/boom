@@ -85,3 +85,35 @@
 .submit button:active {
   transform: scale(90%);
 }
+
+.err {
+  font-size: 17px;
+  font-weight: 300;
+  color: red;
+  padding: 4px;
+}
+
+#err {
+  background-color: rgba(255, 0, 0, 0.341);
+  animation: blink 1s infinite;
+}
+.gerr {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgba(255, 0, 0, 0.174);
+  }
+  20% {
+    background-color: #5b5b5b0e;
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.174);
+  }
+  70% {
+    background-color: #5b5b5b0e;
+  }
+}

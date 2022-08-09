@@ -6,7 +6,7 @@
     "scminput": true // language used in the source control commit message box
   },
   // Theme
-  "workbench.colorTheme": "Learn with Sumit Theme - Dracula version",
+  "workbench.colorTheme": "Dracula",
 
   // config related to code formatting
   "editor.defaultFormatter": "esbenp.prettier-vscode",
