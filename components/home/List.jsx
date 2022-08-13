@@ -5,24 +5,38 @@ import burger from "../../public/img/burgar.png";
 import lassi from "../../public/img/lassi.png";
 import chicken from "../../public/img/chick.png";
 import samusa from "../../public/img/samusa.png";
+import axios from "axios";
 
 const List = () => {
+
+  const [data,setData] = React.useState([]);
+  React.useEffect(()=>{
+    const getdata = async ()=>{
+      try{
+        const res = await axios.get("/api/product",{});
+        let data = res.data;
+        data.splice(10,data.length - 10)
+        setData(data);
+        console.log(data)
+      }catch(e){
+        console.log(e);
+      }
+    }
+    getdata()
+  },[])
+
   return (
     <div id="menu" className={style.main}>
       <div className={style.titel}>
         <h1>our best menu</h1>
       </div>
+      {/*  */}
       <div className={style.menucon}>
-            <Item id={"123456"} name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
-            <Item name={"milk lassi"} photo={lassi} price={"10"} rating={"4.3"} />
-            <Item name={"samusa"} photo={samusa} price={"0.10"} rating={"4.8"} />
-            <Item name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
-            <Item name={"chicken fried"} photo={chicken} price={"15"} rating={"4.5"} />
-            <Item name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
-            <Item name={"milk lassi"} photo={lassi} price={"10"} rating={"4.3"} />
-            <Item name={"burger"} photo={burger} price={"100"} rating={"4.5"} />
-            <Item name={"chicken fried"} photo={chicken} price={"15"} rating={"4.5"} />
-            <Item name={"samusa"} photo={samusa} price={"0.10"} rating={"4.8"} />
+        {
+        data.map((product)=>{
+         return (<Item key={product._id} id={product._id} name={product.name} photo={product.image} price={product.price} rating={"4.5"} />)
+
+        })}
       </div>
     </div>
   )
