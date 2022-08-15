@@ -1,36 +1,97 @@
-import React from 'react';
+import React,{useState} from 'react';
 import style from "../../styles/cart/item.module.css";
 import Image from "next/image";
 import img from "../../public/img/burgar.png";
-import {BsTrash} from "react-icons/bs"
+import {BsTrash} from "react-icons/bs";
+import {toast} from 'react-toastify';
 
-const Item = () => {
+const Item = ({data,setData}) => {
+  const [qnt,setQnt] = useState(data.qnt);
+  
+  function incrise(id){
+    const q = 0;
+    try{
+      const storData = localStorage.getItem('cart');
+      const cartData = JSON.parse(storData);
+      let opData = cartData.map(element => {
+        if(element.id === id){
+          element.qnt ++;
+          q=element.qnt;
+          return element
+        }else{
+          return element;
+        }
+      });
+      localStorage.setItem('cart', JSON.stringify(opData));
+      setQnt(q)
+    }catch(e){
+      console.log(e)
+      toast("some thing is wrong")
+    }
+  }
+
+  function decrise(id){
+    const q = 0;
+    try{
+      const storData = localStorage.getItem('cart');
+      const cartData = JSON.parse(storData);
+      let opData = cartData.map(element => {
+        if(element.id === id){
+          element.qnt > 1 ? element.qnt--: element.qnt = 1;
+          q=element.qnt;
+          return element
+        }else{
+          return element;
+        }
+      });
+      localStorage.setItem('cart', JSON.stringify(opData));
+      setQnt(q)
+    }catch(e){
+      console.log(e)
+      toast("some thing is wrong")
+    }
+  }
+  function deleteIt(id){
+    try{
+      const storData = localStorage.getItem('cart');
+      const cartData = JSON.parse(storData);
+      const opData = cartData.filter((el)=>{
+        return el.id !== id
+      })
+      localStorage.setItem('cart', JSON.stringify(opData));
+      setData(opData);
+      toast.success("delete")
+    }catch(e){
+      console.log(e);
+      toast.error("some Thing is wrong")
+    }
+  }
   return (
     <div className={style.main}>
       <div className={style.img}>
         <div className={style.imgCon}>
-          <Image src={img} alt="" layout='fill' objectFit="contain"/>
+          <Image src={data.photo} alt="" layout='fill' objectFit="contain"/>
         </div>
       </div>
       {/* img end */}
       <div className={style.info}>
         <div className={style.titel}>
-          <p>burger</p>
+          <p>{data.name}</p>
         </div>
         <div className={style.price}>
-          <p>120 $</p>
-          <p><span>total price</span>120$ </p>
+          <p>{data.price} $</p>
+          <p><span>total price </span>{data.price * qnt} $ </p>
         </div>
         <div className={style.cuantity}>
           <p>Quantity</p>
           <div className={style.reng}>
-            <span><button>+</button></span><span><input type="number" name="" id="" /></span><span><button>-</button></span>
+            <span><button onClick={()=>incrise(data.id)}>+</button></span><span><input value={qnt} type="number" name="" id="" /></span><span><button onClick={()=> decrise(data.id)}>-</button></span>
           </div>
         </div>
       </div>
       {/* info end  */}
       <div className={style.delete}>
-        <button><BsTrash/></button>
+        <button onClick={()=> deleteIt(data.id)} ><BsTrash/></button>
       </div>
     </div>
   )

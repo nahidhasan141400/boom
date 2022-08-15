@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import style from '../../styles/list.module.css';
 import Item from "./Item";
 import burger from "../../public/img/burgar.png";
@@ -6,10 +6,13 @@ import lassi from "../../public/img/lassi.png";
 import chicken from "../../public/img/chick.png";
 import samusa from "../../public/img/samusa.png";
 import axios from "axios";
+import PageLoad from "../PageLoad";
+import {toast} from "react-toastify"
 
 const List = () => {
-
+  const [loading,setLoading] = useState(true);
   const [data,setData] = React.useState([]);
+
   React.useEffect(()=>{
     const getdata = async ()=>{
       try{
@@ -17,9 +20,10 @@ const List = () => {
         let data = res.data;
         data.splice(10,data.length - 10)
         setData(data);
-        console.log(data)
+        setLoading(false);
       }catch(e){
         console.log(e);
+        toast.error("server dont serve data!")
       }
     }
     getdata()
@@ -33,6 +37,7 @@ const List = () => {
       {/*  */}
       <div className={style.menucon}>
         {
+          loading? <PageLoad/>:
         data.map((product)=>{
          return (<Item key={product._id} id={product._id} name={product.name} photo={product.image} price={product.price} rating={"4.5"} />)
 

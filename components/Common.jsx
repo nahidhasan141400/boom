@@ -3,6 +3,8 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Head from "next/head";
 import AuthContext from "../context/autContext";
+import { ToastContainer}from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Common = ({children}) => {
@@ -14,7 +16,10 @@ const Common = ({children}) => {
         <Nav />
         {children}
         <Footer />
-    </AuthContext>
+        <div className="toast">
+          <ToastContainer />
+        </div>
+    </AuthContext >
   )
 }
 

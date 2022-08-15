@@ -92,7 +92,7 @@ const Registration = () => {
           email,
           password,
           address :`${city},${address}`,
-          image:"/nahid.jpg"
+          image:"/gif/profile.gif"
         });
 
         console.log("save-1")

@@ -9,12 +9,12 @@ const Product = () => {
   const router = useRouter();
   const id = router.query.id;
   const [product,setProduct] = React.useState({
-      _id: "...",
+      _id: "...loading",
       name: "name",
       price: "000",
-      des: "description",
+      des: "description ... loading",
       catagory: "no",
-      image: "/img/burgar.png",
+      image: "/gif/loading.gif",
       __v: 0
   })
 

@@ -1,10 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import style from "../../styles/cart/cart.module.css";
 import Item from "./Item";
 import {BsCart2 ,BsCreditCard} from "react-icons/bs";
 import {motion} from "framer-motion"
 
-const Cart = () => {
+const Cart = ({dataRaw}) => {
+  const [data,setData] = useState(dataRaw)
   const transiriion = {
     duration : 0.3,
     type:"spring"
@@ -15,7 +16,7 @@ const Cart = () => {
       <div className={style.container}>
         <div className={style.listCon}>
           <div className={style.list}>
-            {[1,2,3,4,5,6].map(e => <Item key={e}/>)}
+            {data.map(e => <Item key={e.id} data={e} setData={setData}/>)}
           </div>
         </div>
         <div className={style.billCon}>

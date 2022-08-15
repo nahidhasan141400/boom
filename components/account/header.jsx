@@ -15,7 +15,7 @@ const header = ({user}) => {
             <div className={style.profile}>
                 <div className={style.avatar}>
                     <div className={style.photo}>
-                    <Image alt='' layout='fill' src={user.image} objectFit="contain"/>
+                    <Image alt='' layout='fill' src={user.image} objectFit="cover"/>
                     </div>
                     <div className={style.change}>
                         <span><FaCamera/></span>

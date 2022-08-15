@@ -1,0 +1,18 @@
+.pageCon {
+  width: 100%;
+  min-width: 400px;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingcon {
+  width: 90%;
+  height: 300px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: hue-rotate(280deg) brightness(160%);
+}
