@@ -5,7 +5,7 @@ import samusa from "../../public/img/samusa-bg.png";
 import {FaCamera} from "react-icons/fa";
 import profile from "../../public/nahid.jpg"
 
-const header = ({user}) => {
+const header = ({setChangeProfile,user}) => {
   return (
     <div className={style.main}>
         <div className={style.con}>
@@ -17,7 +17,9 @@ const header = ({user}) => {
                     <div className={style.photo}>
                     <Image alt='' layout='fill' src={user.image} objectFit="cover"/>
                     </div>
-                    <div className={style.change}>
+                    <div
+                    onClick={()=>setChangeProfile(true)}
+                    className={style.change}>
                         <span><FaCamera/></span>
                         <h2>change</h2>
                     </div>

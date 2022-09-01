@@ -1,0 +1,123 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 500;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(255, 94, 247, 0.431) 17.8%,
+    rgba(2, 247, 255, 0.434) 100.2%
+  );
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conteiner {
+  width: 400px;
+  height: 450px;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(2, 247, 255, 0.659) 17.8%,
+    rgba(255, 94, 247, 0.809) 100.2%
+  );
+  border-radius: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.253);
+  position: relative;
+}
+.close {
+  position: absolute;
+  font-size: 30px;
+  color: rgb(0, 89, 255);
+  top: 20px;
+  right: 20px;
+  transition: all 0.2s;
+  cursor: pointer;
+  z-index: 3;
+}
+.close:hover {
+  color: rgb(255, 44, 44);
+  filter: drop-shadow(1px 1px 3px 5px rgb(255, 0, 0));
+}
+
+.opration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.93);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 4px;
+}
+.opration input {
+  width: 90%;
+  padding: 5px 2px;
+  font-size: 20px;
+  outline: none;
+  border: 2px solid rgb(252, 113, 38);
+  border-radius: 4px;
+}
+.opration button {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-image: radial-gradient(
+    circle at 10% 20%,
+    rgb(252, 113, 38) 0%,
+    rgb(249, 0, 0) 90.1%
+  );
+}
+.opration button:hover {
+  transform: scale(105%) translate(-4px, -4px);
+  box-shadow: 1px 1px 0px rgb(192, 74, 11), 3px 3px 0px rgb(225, 6, 145);
+}
+.inputCon {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.chackboxCon {
+  width: 90%;
+  padding: 10px 3px;
+  display: flex;
+  margin: auto;
+}
+.chackboxCon input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.deseble {
+  filter: brightness(90%) saturate(0%);
+}
+
+.hi {
+  background-image: radial-gradient(
+    circle at 10% 20%,
+    rgb(252, 113, 38) 0%,
+    rgb(249, 0, 0) 90.1%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.his svg {
+  fill: rgb(244, 103, 27);
+  position: relative;
+  top: 3px;
+}

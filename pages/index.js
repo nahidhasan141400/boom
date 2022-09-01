@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Hero />
       <Instrac/>
-      <List/>
+      <List nom={10}/>
       <Add/>
     </>
   )

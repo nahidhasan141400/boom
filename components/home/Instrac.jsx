@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import burger from "../../public/img/burgar.png"
 import lassi from "../../public/img/lassi.png"
 import chick from "../../public/img/chick.png"
-import samusa from "../../public/img/samusa.png"
+import samusa from "../../public/img/samusa-bg.png"
 import roll from "../../public/img/rolll.png"
 
 const Instrac = () => {

@@ -5,6 +5,7 @@ import axios from "axios";
 import Loading from "../components/loading";
 import { typographyClasses } from '@mui/material';
 import router from "next/router";
+const profile = 7;
 
 const Registration = () => {
 
@@ -86,13 +87,15 @@ const Registration = () => {
 
      try{
 
+        let profilePic = `/gif/p (${Math.round(Math.random()*profile)}).gif`
+
         let res = await axios.post("http://localhost:3000/api/user",{
           name:`${fname} ${lname}`,
           phone,
           email,
           password,
           address :`${city},${address}`,
-          image:"/gif/profile.gif"
+          image:profilePic
         });
 
         console.log("save-1")

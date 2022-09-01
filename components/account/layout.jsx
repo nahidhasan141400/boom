@@ -5,7 +5,7 @@ import Nav from "./nav";
 import Details from "./setting/details";
 import Setting from "./setting/setting";
 
-const Layout = ({user}) => {
+const Layout = ({setUser,user}) => {
   let [nav ,setNav] = useState("details")
   return (
       <div className={style.main}>
@@ -15,7 +15,7 @@ const Layout = ({user}) => {
         <div className={style.con}>
 
           {nav==="details"? <Details user={user} /> : null }
-          {nav==="setting"? <Setting /> : null }
+          {nav==="setting"? <Setting setUser={setUser} /> : null }
           
         </div>
       </div>

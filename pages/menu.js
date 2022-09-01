@@ -10,7 +10,7 @@ const menu = () => {
         minHeight:"100vh",
         paddingBottom:"50px",
     }} >
-            <List/>
+            <List nom={20}/>
         </div>
     </>
   )

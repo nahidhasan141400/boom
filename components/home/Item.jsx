@@ -4,7 +4,7 @@ import Image from "next/image"
 import {motion} from "framer-motion";
 import { FaDollarSign , FaCartPlus , FaStar } from "react-icons/fa";
 import Link from "next/link";
-import {toast} from 'react-toastify';
+import {toast} from 'react-toastify'; 
 
 
 const Item = ({ id='1234' ,name, photo, price, rating}) => {

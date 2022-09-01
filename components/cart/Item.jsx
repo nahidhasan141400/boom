@@ -6,7 +6,6 @@ import {BsTrash} from "react-icons/bs";
 import {toast} from 'react-toastify';
 
 const Item = ({data,setData}) => {
-  const [qnt,setQnt] = useState(data.qnt);
   
   function incrise(id){
     const q = 0;
@@ -23,7 +22,7 @@ const Item = ({data,setData}) => {
         }
       });
       localStorage.setItem('cart', JSON.stringify(opData));
-      setQnt(q)
+      setData(opData);
     }catch(e){
       console.log(e)
       toast("some thing is wrong")
@@ -45,7 +44,7 @@ const Item = ({data,setData}) => {
         }
       });
       localStorage.setItem('cart', JSON.stringify(opData));
-      setQnt(q)
+      setData(opData);
     }catch(e){
       console.log(e)
       toast("some thing is wrong")
@@ -80,12 +79,12 @@ const Item = ({data,setData}) => {
         </div>
         <div className={style.price}>
           <p>{data.price} $</p>
-          <p><span>total price </span>{data.price * qnt} $ </p>
+          <p><span>total price </span>{Math.round((data.price * data.qnt)*10)/10} $ </p>
         </div>
         <div className={style.cuantity}>
           <p>Quantity</p>
           <div className={style.reng}>
-            <span><button onClick={()=>incrise(data.id)}>+</button></span><span><input value={qnt} type="number" name="" id="" /></span><span><button onClick={()=> decrise(data.id)}>-</button></span>
+            <span><button onClick={()=>incrise(data.id)}>+</button></span><span><input value={data.qnt} type="number" name="" id="" /></span><span><button onClick={()=> decrise(data.id)}>-</button></span>
           </div>
         </div>
       </div>

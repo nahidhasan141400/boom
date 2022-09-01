@@ -1,25 +1,28 @@
-import React from 'react';
+import React,{useState} from 'react';
 import style from "../styles/account/account.module.css";
 import Header from "../components/account/header";
 import Layout from "../components/account/layout";
+import ChangeProfile from "../components/account/setting/ChangeProfile";
 import axios from "axios";
 import {useRouter} from "next/router";
 
+
 const Account = ({user}) => {
-
-
+  const [User,setUser] = useState(user);
+  const [changeProfile,setChangeProfile] = useState(false);
   
   return (
     <div className={style.account}>
+      {changeProfile? <ChangeProfile setChangeProfile={setChangeProfile}/> : null}
       <div className={style.con}>
         <div className={style.header}>
 
-          <Header user={user}/>
+          <Header setChangeProfile={setChangeProfile} user={User}/>
         </div>
         
         <div className={style.body}>
           
-          <Layout user={user}/>
+          <Layout setUser={setUser} user={User}/>
         </div>
       </div>
     </div>

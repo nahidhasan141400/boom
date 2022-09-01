@@ -41,6 +41,7 @@
   border-radius: 50%;
   margin: 0 10px 0 20px;
   overflow: hidden;
+  animation: zoomi 2s ease-in;
 }
 .photo {
   height: 100%;
@@ -48,6 +49,31 @@
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+}
+@keyframes zoomi {
+  0% {
+    transform: scale(100%);
+    border: 2px solid red;
+  }
+  20% {
+    transform: scale(109%);
+    border: none;
+  }
+  50% {
+    transform: scale(100%);
+    border: 3px solid red;
+  }
+  60% {
+    transform: scale(110%);
+    border: none;
+  }
+  80% {
+    transform: scale(100%);
+  }
+  95% {
+    transform: scale(115%);
+    border: 2px solid red;
+  }
 }
 
 .change {

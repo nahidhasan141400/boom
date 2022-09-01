@@ -1,15 +1,11 @@
 import React,{useState} from 'react';
 import style from '../../styles/list.module.css';
 import Item from "./Item";
-import burger from "../../public/img/burgar.png";
-import lassi from "../../public/img/lassi.png";
-import chicken from "../../public/img/chick.png";
-import samusa from "../../public/img/samusa.png";
 import axios from "axios";
 import PageLoad from "../PageLoad";
 import {toast} from "react-toastify"
 
-const List = () => {
+const List = ({nom}) => {
   const [loading,setLoading] = useState(true);
   const [data,setData] = React.useState([]);
 
@@ -18,7 +14,7 @@ const List = () => {
       try{
         const res = await axios.get("/api/product",{});
         let data = res.data;
-        data.splice(10,data.length - 10)
+        data.splice(nom,data.length - nom)
         setData(data);
         setLoading(false);
       }catch(e){

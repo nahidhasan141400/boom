@@ -6,14 +6,17 @@ import Link from "next/link";
 import Loading from "../components/loading";
 import axios from "axios";
 import Router from "next/router";
-import {useAuth} from "../context/autContext"
+import {useAuth} from "../context/autContext";
+import {toast} from "react-toastify";
 
 const Login = () => {
   const [phone,setPhone] = useState("");
   const [password,setpassword] = useState("");
   const [err,seterr] = useState("");
   const [loading,setloading] = useState(false);
-  const {setLogin} = useAuth()
+  const {setLogin} = useAuth();
+
+
 
 
   const loginHandler = async ()=>{
@@ -27,13 +30,14 @@ const Login = () => {
     try{
       setloading(true);
       let res = await axios.post("/api/login",{phone,password});
-      console.log(res.data)
+     
       if(res.data.err){
         seterr("some thing is wrong!!");
         setloading(false);
       }else{
         seterr("")
         setLogin(true)
+        toast.info('login sucssesfull')
         Router.push("/")
       }
     }catch(e){

@@ -7,6 +7,7 @@ import {FaCartPlus , FaHome , FaPaperclip , FaRegIdCard , FaRing , FaHamburger ,
 import Link from "next/link";
 import {useAuth} from "../context/autContext";
 import Router from "next/router";
+import {toast} from "react-toastify"
 
 const Nav = () => {
   const {login,setLogin} = useAuth();
@@ -36,6 +37,7 @@ const Nav = () => {
         document.cookie = name + "=; expires=" + expiry.toGMTString() + "; path=/";
        });
          setLogin(false);
+         toast.info("logout sucssefull .")
          Router.push('/login')
     }
   return (

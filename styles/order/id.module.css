@@ -83,6 +83,30 @@
   margin-top: 10px;
   cursor: none;
 }
+.info {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.left,
+.right {
+  flex: 1;
+  position: relative;
+}
+.Lcontent,
+.Rcontent {
+  width: 100%;
+  padding: 20px;
+}
+.datainfo {
+  font-size: 20px;
+  margin: 10px 3px;
+  text-transform: capitalize;
+}
+.datainfo span {
+  padding: 3px;
+}
 /* media 750px max-w */
 
 @media (max-width: 750px) {
@@ -101,5 +125,8 @@
   .statusbar ul {
     width: 500px;
     transform: scale(70%) translateX(-60px);
+  }
+  .info {
+    flex-direction: column;
   }
 }

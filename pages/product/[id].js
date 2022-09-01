@@ -3,6 +3,7 @@ import style from '../../styles/product/id.module.css';
 import Image from "next/image";
 import axios from "axios";
 import {useRouter} from "next/router";
+import {toast} from "react-toastify";
 
 const Product = () => {
   
@@ -17,22 +18,43 @@ const Product = () => {
       image: "/gif/loading.gif",
       __v: 0
   })
+  function addCart(){
+    let {_id,name,image,price} = product;
+    const obj = {id:_id,name,photo:image,price,qnt:1}
+    const storData = localStorage.getItem('cart');
+    let storDataObj;
+    if(!storData){
+        storDataObj = [];
+    }else{
+        storDataObj = JSON.parse(storData);
+    }
+    for(let i=0; i< storDataObj.length; i++){
+        if(storDataObj[i].id+"a" == obj.id+"a"){
+            return toast.error(obj.name+" all ready add!")
+        }
+    }
 
-    console.log("id="+id)
+    storDataObj.push(obj)
+    localStorage.setItem('cart', JSON.stringify(storDataObj));
+    toast.success(obj.name+" add to cart")
+}
+
+function order(){
+  addCart()
+  router.push("/cart")
+
+}
   React.useEffect(()=>{
     const id = router.query.id;
-    console.log("id="+id)
     const getData = async ()=>{
       try{
         console.log("saart")
         const res = await axios.get("/api/product",{
         headers:{
-
           id,
           // id:"495bb4d236dc160ffc3d869b",
         }
       });
-      console.log(res.data)
       setProduct(res.data);
     }catch(e){
       console.log(e);
@@ -54,8 +76,8 @@ const Product = () => {
             <h1 className={style.name}>{product.name}</h1>
             <h2 className={style.price}>Price: {product.price}$</h2>
             <div className={style.action}>
-              <button>add to cart</button>
-              <button>order now</button>
+              <button onClick={addCart}>add to cart</button>
+              <button onClick={order} >order now</button>
             </div>
           </div>
         </div>

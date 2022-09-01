@@ -2,16 +2,31 @@ import React,{useState} from 'react';
 import style from "../../styles/cart/cart.module.css";
 import Item from "./Item";
 import {BsCart2 ,BsCreditCard} from "react-icons/bs";
-import {motion} from "framer-motion"
+import {motion} from "framer-motion";
+import Corder from "./Corder";
 
 const Cart = ({dataRaw}) => {
-  const [data,setData] = useState(dataRaw)
+  const [order,setOrder] = useState(false);
+  const [data,setData] = useState(dataRaw);
+  const [totalItem,settotalItem] = useState(0);
+  const [totalprice,settotalprice] = useState(0);
   const transiriion = {
     duration : 0.3,
     type:"spring"
   }
+  React.useEffect(()=>{
+    let n =0;
+    let t =0;
+    data.forEach(element => {
+       n = n+element.qnt            
+       t = t+element.price * element.qnt;           
+    })
+    settotalItem(n)
+    settotalprice(t)
+  },[data])
   return (
     <div className={style.main}>
+      {order && <Corder data={data} setOrder={setOrder}/>}
       <h1 className={style.titel}><BsCart2 /> cart</h1>
       <div className={style.container}>
         <div className={style.listCon}>
@@ -36,15 +51,15 @@ const Cart = ({dataRaw}) => {
               <div className={style.total}>
                   <p>
                     <h1>total items</h1>
-                    <span>120 pis</span>
+                    <span>{totalItem} pis</span>
                   </p>
                   <p>
                     <h1>total price</h1>
-                    <span>100 $</span>
+                    <span>{ Math.round(totalprice*10)/10} $</span>
                   </p>
               </div>
               <div className={style.btnsec}>
-                <button>check out</button>
+                <button onClick={()=>setOrder(true)}>check out</button>
               </div>
           </motion.div>
         </div>

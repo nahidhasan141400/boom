@@ -94,3 +94,20 @@
 .des p {
   font-size: 20px;
 }
+
+@media (max-width: 750px) {
+  .header {
+    flex-direction: column;
+  }
+  .con2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .action button {
+    font-size: 13px;
+  }
+  .des p {
+    font-size: 14px;
+  }
+}
