@@ -29,7 +29,7 @@ const Instrac = () => {
               transition={transiriion}
             className={style.card}>
               <div className={style.logo}><Image src={burger} alt="" layout='fill' /></div>
-              <h1>What's Hot</h1>
+              <h1>What&aposs Hot</h1>
             </motion.div>
             {/* card end */}
             <motion.div 
