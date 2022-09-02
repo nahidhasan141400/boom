@@ -36,7 +36,7 @@ export const getServerSideProps = async (ctx)=>{
     user:null,
   };
     try{
-      const res = await axios.get("http://localhost:3000/api/user",{
+      const res = await axios.get("/api/user",{
         headers:{
           cookies:offer,
           boom
