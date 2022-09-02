@@ -3,7 +3,6 @@ import style from '../styles/reg.module.css';
 import {BsBox} from 'react-icons/bs';
 import axios from "axios";
 import Loading from "../components/loading";
-import { typographyClasses } from '@mui/material';
 import router from "next/router";
 const profile = 7;
 
