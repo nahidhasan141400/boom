@@ -88,7 +88,7 @@ const Registration = () => {
 
         let profilePic = `/gif/p (${Math.round(Math.random()*profile)}).gif`
 
-        let res = await axios.post("http://localhost:3000/api/user",{
+        let res = await axios.post("/api/user",{
           name:`${fname} ${lname}`,
           phone,
           email,
