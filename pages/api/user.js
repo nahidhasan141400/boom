@@ -34,7 +34,10 @@ export default async function handler(req, res) {
   if (method === "GET"){
     const key = req.headers.cookies
     const hash = req.headers.boom
+    // console.log(key,hash)
     const _id = ncrip.dnc(hash,key);
+    // // let _id = 1234;
+    // // console.log(_id);
     try {
       let userOne = await user.findOne({_id});
       let sendObj = {
@@ -44,9 +47,9 @@ export default async function handler(req, res) {
         address:userOne.address,
         image:userOne.image,
       }
-      
       res.send(sendObj)
     } catch (error) {
+      // console.log(error);
       res.status(400).send(error)
     }
   }

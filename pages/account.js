@@ -30,13 +30,14 @@ const Account = ({user}) => {
 }
 export const getServerSideProps = async (ctx)=>{
   let {boom,offer} = ctx.req.cookies;
+  let host = ctx.req.headers.host;
   
   let err = null;
   let Props ={
     user:null,
   };
     try{
-      const res = await axios.get("/api/user",{
+      const res = await axios.get(`http://${host}/api/user`,{
         headers:{
           cookies:offer,
           boom
@@ -56,7 +57,7 @@ export const getServerSideProps = async (ctx)=>{
         Props.user = res.data;
       }
     }catch(e){
-      // console.log(e)
+      console.log(e)
       return{
         redirect:{
           destination: "/login",

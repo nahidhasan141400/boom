@@ -42,7 +42,7 @@ const ChangeProfile = ({setChangeProfile}) => {
           <input ref={input}
           onChange={(e)=>InputC(e)}
           accept="image" placeholder="choose json file" 
-          type="file" name="photo" id="photo" />
+          type="file" name="file" id="photo" />
           <button
             onClick={()=> {load?()=>{}:btnClick()}}
           >
@@ -54,7 +54,7 @@ const ChangeProfile = ({setChangeProfile}) => {
           </button>
         </div>
       </div>
-    </div>
+    </div> 
   )
 }
 
